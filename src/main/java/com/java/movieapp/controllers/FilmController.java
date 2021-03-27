@@ -30,7 +30,7 @@ public class FilmController {
     public List<FilmEntity> get(){
          return filmService.getAllFilms();
     }
-    @GetMapping("/film/tim-kiem")
+    @GetMapping("/film/search")
     public List<FilmEntity> searchByName(@RequestParam String query){
         return filmService.searchFilmByName(query);
     }
