@@ -30,13 +30,13 @@ public class FilmController {
     public List<FilmEntity> get(){
          return filmService.getAllFilms();
     }
+    @GetMapping("/film/tim-kiem")
+    public List<FilmEntity> searchByName(@RequestParam String query){
+        return filmService.searchFilmByName(query);
+    }
     @GetMapping("/film/{id}")
     public FilmEntity getFilmById(@PathVariable int id){
         return filmService.getFilmById(id);
-    }
-    @GetMapping("/film/search")
-    public List<FilmEntity> searchByName(@RequestParam String query){
-        return filmService.searchFilmByName(query);
     }
     @GetMapping("/film/phim-le")
     public Map<String,Object> findPaginated(@RequestParam int page) {
