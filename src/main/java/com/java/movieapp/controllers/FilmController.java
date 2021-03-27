@@ -32,6 +32,7 @@ public class FilmController {
     }
     @GetMapping("/film/search")
     public List<FilmEntity> searchByName(@RequestParam String query){
+        query=query.replace("+"," ");
         return filmService.searchFilmByName(query);
     }
     @GetMapping("/film/{id}")

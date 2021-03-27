@@ -55,7 +55,6 @@ public class FilmServiceImpl implements FilmService {
     @Override
     public Page<FilmEntity> findPagination(int pageNo, int pageSize) {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-
         return filmRepository.findAll(pageable);
     }
 
